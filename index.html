@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Свод по ПВЗ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14120F;
+    --surface: #1D1A16;
+    --surface-2: #26221C;
+    --card-edge: #332E26;
+    --paper: #F2ECDF;
+    --muted: #9C9284;
+    --ink-late: #E8552E;
+    --ink-early: #4C8FD1;
+    --ink-ontime: #5FA96B;
+    --ink-none: #C74B4B;
+    --line: rgba(242,236,223,0.08);
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(232,85,46,0.06), transparent 60%),
+      radial-gradient(900px 500px at 100% 0%, rgba(76,143,209,0.05), transparent 55%),
+      var(--bg);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 28px 18px 60px;
+  }
+  .wrap{ max-width: 980px; margin: 0 auto; }
+
+  /* ---------- header / hero ---------- */
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  h1{
+    font-family:'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 5vw, 42px);
+    letter-spacing: 0.01em;
+    margin: 0 0 22px;
+    text-transform: uppercase;
+  }
+  .datebar{
+    display:flex; align-items:center; gap:10px; margin-bottom: 22px; flex-wrap: wrap;
+  }
+  .datebar select{
+    background: var(--surface);
+    border: 1px solid var(--card-edge);
+    color: var(--paper);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  .datebar .updated{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ---------- KPI hero band ---------- */
+  .kpis{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--card-edge);
+    border: 1px solid var(--card-edge);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+  .kpi{
+    background: var(--surface);
+    padding: 20px 18px;
+  }
+  .kpi.headline{
+    background: linear-gradient(160deg, #241C16, var(--surface));
+  }
+  .kpi .num{
+    font-family:'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1;
+  }
+  .kpi.headline .num{ font-size: 52px; color: var(--ink-late); }
+  .kpi .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-top: 8px;
+  }
+
+  /* ---------- controls ---------- */
+  .controls{
+    display:flex; gap:10px; margin-bottom: 16px; flex-wrap:wrap; align-items:center;
+  }
+  .controls input[type="text"]{
+    flex: 1; min-width: 180px;
+    background: var(--surface);
+    border: 1px solid var(--card-edge);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+  }
+  .controls input[type="text"]::placeholder{ color: var(--muted); }
+  .sortbtns{ display:flex; gap:6px; }
+  .sortbtns button{
+    background: var(--surface);
+    border: 1px solid var(--card-edge);
+    color: var(--muted);
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    padding: 9px 13px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .sortbtns button.active{
+    color: var(--paper);
+    border-color: var(--ink-late);
+  }
+
+  /* ---------- group headers ---------- */
+  .group-title{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin: 26px 0 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed var(--line);
+  }
+
+  /* ---------- ticket rows ---------- */
+  .ticket{
+    position: relative;
+    display:grid;
+    grid-template-columns: 90px 1fr auto auto;
+    align-items:center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--card-edge);
+    border-radius: 8px;
+    padding: 14px 16px 14px 20px;
+    margin-bottom: 8px;
+  }
+  .ticket::before{
+    content:"";
+    position:absolute; left:-1px; top:0; bottom:0; width:4px;
+    border-radius: 8px 0 0 8px;
+  }
+  .ticket.ontime::before{ background: var(--ink-ontime); }
+  .ticket.late::before{ background: var(--ink-late); }
+  .ticket.early::before{ background: var(--ink-early); }
+  .ticket.none::before{ background: var(--ink-none); }
+
+  .t-code{
+    font-family:'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 14.5px;
+  }
+  .t-mid{ min-width:0; }
+  .t-user{
+    font-size: 13px;
+    color: var(--muted);
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .t-times{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .t-times b{ color: var(--paper); font-weight: 500; }
+
+  .t-delay{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-align:right;
+    min-width: 64px;
+    color: var(--muted);
+  }
+  .t-delay.late{ color: var(--ink-late); }
+
+  .stamp{
+    font-family:'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 11px;
+    border-radius: 3px;
+    border: 2px solid currentColor;
+    transform: rotate(-3deg);
+    white-space: nowrap;
+  }
+  .stamp.ontime{ color: var(--ink-ontime); }
+  .stamp.late{ color: var(--ink-late); transform: rotate(-4deg); }
+  .stamp.early{ color: var(--ink-early); transform: rotate(2deg); }
+  .stamp.none{ color: var(--ink-none); transform: rotate(-2deg); }
+
+  .empty, .loading{
+    font-family:'JetBrains Mono', monospace;
+    color: var(--muted);
+    text-align:center;
+    padding: 60px 10px;
+    font-size: 13px;
+  }
+
+  @media (max-width: 620px){
+    .kpis{ grid-template-columns: 1fr 1fr; }
+    .kpi.headline{ grid-column: 1 / -1; }
+    .ticket{ grid-template-columns: 70px 1fr; row-gap: 8px; }
+    .t-delay, .stamp{ grid-column: 2; justify-self: start; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">УЧЁТ ОТКРЫТИЯ · ПВЗ</div>
+  <h1>Свод опозданий</h1>
+
+  <div class="datebar">
+    <select id="dateSelect"></select>
+    <span class="updated" id="updatedAt"></span>
+  </div>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="controls">
+    <input type="text" id="search" placeholder="Поиск по номеру ПВЗ или username…">
+    <div class="sortbtns">
+      <button data-sort="time" class="active">по времени</button>
+      <button data-sort="delay">по опозданию</button>
+    </div>
+  </div>
+
+  <div id="content"><div class="loading">Загрузка…</div></div>
+</div>
+
+<script>
+const DATA_URL = "report.json"; // лежит рядом с этой страницей на GitHub Pages
+
+const STATUS_LABEL = {
+  ontime: "Открыт",
+  late: "Опоздание",
+  early: "Досрочно",
+  none: "Не открылся"
+};
+
+let allData = null;
+let currentDate = null;
+let sortMode = "time";
+
+async function load() {
+  try {
+    const res = await fetch(DATA_URL + "?t=" + Date.now());
+    allData = await res.json();
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      '<div class="empty">Не удалось загрузить report.json.<br>Проверь, что файл лежит рядом со страницей.</div>';
+    return;
+  }
+
+  const dates = Object.keys(allData.days || {}).sort().reverse();
+  if (dates.length === 0) {
+    document.getElementById("content").innerHTML = '<div class="empty">Пока нет данных.</div>';
+    return;
+  }
+
+  const sel = document.getElementById("dateSelect");
+  sel.innerHTML = dates.map(d => `<option value="${d}">${formatDateRu(d)}</option>`).join("");
+  sel.addEventListener("change", () => render(sel.value));
+
+  currentDate = dates[0];
+  sel.value = currentDate;
+  render(currentDate);
+}
+
+function formatDateRu(iso){
+  const [y,m,d] = iso.split("-");
+  return `${d}.${m}.${y}`;
+}
+
+function render(dateKey){
+  currentDate = dateKey;
+  const day = allData.days[dateKey];
+  document.getElementById("updatedAt").textContent = day.generated_at ? "обновлено " + day.generated_at : "";
+
+  renderKpis(day.rows);
+  renderList(day.rows);
+}
+
+function renderKpis(rows){
+  const total = rows.length;
+  const late = rows.filter(r => r.status === "late");
+  const ontime = rows.filter(r => r.status === "ontime" || r.status === "early");
+  const none = rows.filter(r => r.status === "none");
+  const totalDelay = late.reduce((s,r)=> s + (r.delay_minutes||0), 0);
+
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi headline">
+      <div class="num">${totalDelay}</div>
+      <div class="label">минут потеряно на опозданиях</div>
+    </div>
+    <div class="kpi"><div class="num">${ontime.length}/${total}</div><div class="label">открылись вовремя</div></div>
+    <div class="kpi"><div class="num">${late.length}</div><div class="label">опоздали</div></div>
+    <div class="kpi"><div class="num">${none.length}</div><div class="label">не открылись</div></div>
+  `;
+}
+
+function renderList(rows){
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  let filtered = rows.filter(r =>
+    !q || r.pvz.toLowerCase().includes(q) || (r.username||"").toLowerCase().includes(q)
+  );
+
+  if (sortMode === "delay") {
+    filtered = filtered.slice().sort((a,b) => (b.delay_minutes||0) - (a.delay_minutes||0));
+    document.getElementById("content").innerHTML =
+      filtered.length ? filtered.map(rowHtml).join("") : '<div class="empty">Ничего не найдено.</div>';
+    return;
+  }
+
+  // группировка по плановому времени
+  const groups = {};
+  filtered.forEach(r => { (groups[r.scheduled] = groups[r.scheduled] || []).push(r); });
+  const times = Object.keys(groups).sort();
+
+  if (times.length === 0) {
+    document.getElementById("content").innerHTML = '<div class="empty">Ничего не найдено.</div>';
+    return;
+  }
+
+  document.getElementById("content").innerHTML = times.map(t => `
+    <div class="group-title">Группа ${t}</div>
+    ${groups[t].map(rowHtml).join("")}
+  `).join("");
+}
+
+function rowHtml(r){
+  const status = r.status || "none";
+  const delayStr = r.status === "late" ? `+${r.delay_minutes} мин` : (r.actual ? "—" : "—");
+  return `
+    <div class="ticket ${status}">
+      <div class="t-code">${r.pvz}</div>
+      <div class="t-mid">
+        <div class="t-user">${r.username || ""}</div>
+        <div class="t-times">план <b>${r.scheduled}</b> · факт <b>${r.actual || "—"}</b></div>
+      </div>
+      <div class="t-delay ${status === 'late' ? 'late' : ''}">${delayStr}</div>
+      <div class="stamp ${status}">${STATUS_LABEL[status] || status}</div>
+    </div>
+  `;
+}
+
+document.getElementById("search").addEventListener("input", () => render(currentDate));
+document.querySelectorAll(".sortbtns button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".sortbtns button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    sortMode = btn.dataset.sort;
+    render(currentDate);
+  });
+});
+
+load();
+</script>
+</body>
+</html>
