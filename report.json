@@ -1,7 +1,7 @@
 {
   "days": {
     "2026-08-11": {
-      "generated_at": "11.08.2026 09:15",
+      "generated_at": "11.08.2026 09:18",
       "rows": [
         {
           "pvz": "ТАШ-28",
@@ -126,8 +126,8 @@
         {
           "pvz": "FrТАШ-193",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:16",
+          "status": "early",
           "username": "@frtash193",
           "delay_minutes": 0
         },
