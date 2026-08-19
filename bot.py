@@ -95,7 +95,7 @@ GIT_PUSH_MIN_INTERVAL_MIN = 3  # не чаще одного пуша в стол
 
 # Ссылка на мини-приложение (index.html), опубликованное на GitHub Pages. Обязательно HTTPS!
 # Впиши сюда свою реальную ссылку, например: https://твой-юзернейм.github.io/репозиторий/index.html
-WEBAPP_URL = "https://ВПИШИ-СЮДА-СВОЮ-ССЫЛКУ.github.io/repo/index.html"
+WEBAPP_URL = "https://skywhy-sourse.github.io/open/index.html"
 
 # --- ТЕСТОВЫЙ РЕЖИМ ---
 TEST_MODE = False  # поставь True, чтобы включить команды /settime, /testopen, /resettest
@@ -576,7 +576,7 @@ def webapp_keyboard() -> InlineKeyboardMarkup | None:
     if not WEBAPP_URL.startswith("https://") or "ВПИШИ-СЮДА" in WEBAPP_URL:
         return None
     return InlineKeyboardMarkup(inline_keyboard=[[
-        InlineKeyboardButton(text="📊 Открыть свод", web_app=WebAppInfo(url=WEBAPP_URL))
+        InlineKeyboardButton(text="📊 Открыть свод", url=WEBAPP_URL)
     ]])
 
 
