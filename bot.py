@@ -39,6 +39,7 @@
 
 import asyncio
 import logging
+import os
 import random
 import re
 import sqlite3
@@ -54,7 +55,8 @@ from morning_messages import MORNING_MESSAGES
 
 # ================== НАСТРОЙКИ ==================
 
-BOT_TOKEN = "8679055019:AAFUMZve7dAGyXtL67MmCrFFVANrnXnpasQ"
+# Токен задаётся в переменной окружения Windows BOT_TOKEN.
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 GROUP_CHAT_IDS = [-1002512904846, -1004366880638]  # обе группы, где бот принимает фото и шлёт сообщения
 
 # Твой telegram user id — команды /status и /allreport сработают только для него.
