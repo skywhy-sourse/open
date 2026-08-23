@@ -1045,7 +1045,7 @@
       ]
     },
     "2026-08-23": {
-      "generated_at": "23.08.2026 10:39",
+      "generated_at": "23.08.2026 11:24",
       "rows": [
         {
           "pvz": "ТАШ-28",
@@ -1066,10 +1066,10 @@
         {
           "pvz": "ТАШ-83",
           "scheduled": "09:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@uzum_vodnik_tash83",
-          "delay_minutes": 0
+          "delay_minutes": 99
         },
         {
           "pvz": "ТАШ-115",
@@ -1082,8 +1082,8 @@
         {
           "pvz": "ТАШ-108",
           "scheduled": "11:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "early",
           "username": "@Tash108",
           "delay_minutes": 0
         },
@@ -1098,10 +1098,10 @@
         {
           "pvz": "ТАШ-33",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@KuylukkonechkaTash33",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "ТАШ-68",
@@ -1122,10 +1122,10 @@
         {
           "pvz": "ТАШ-84",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@hosiyatuzum",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "ТАШ-131",
@@ -1138,10 +1138,10 @@
         {
           "pvz": "ТАШ-130",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@Uzumtash130",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-163",
@@ -1170,18 +1170,18 @@
         {
           "pvz": "FrТАШ-193",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@frtash193",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-192",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FrTash192",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-207",
@@ -1194,10 +1194,10 @@
         {
           "pvz": "FrТАШ-211",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FrTash211",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-224",
@@ -1210,10 +1210,10 @@
         {
           "pvz": "FrТАШ-272",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FrTash_272",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-288",
@@ -1226,10 +1226,10 @@
         {
           "pvz": "FrТАШ-276",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FrTash276",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-326",
@@ -1242,10 +1242,10 @@
         {
           "pvz": "FrТАШ-340",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FrTash_340",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-341",
@@ -1266,18 +1266,18 @@
         {
           "pvz": "FrТАШ-357",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@Frtash357",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-363",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "10:39",
+          "status": "late",
           "username": "@FRTASH363",
-          "delay_minutes": 0
+          "delay_minutes": 39
         },
         {
           "pvz": "FrТАШ-366",
