@@ -1828,39 +1828,39 @@
       ]
     },
     "2026-08-27": {
-      "generated_at": "27.08.2026 04:45",
+      "generated_at": "27.08.2026 09:49",
       "rows": [
         {
           "pvz": "ТАШ-28",
           "scheduled": "09:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "late",
           "username": "@tkaduzum",
-          "delay_minutes": 0
+          "delay_minutes": 48
         },
         {
           "pvz": "ТАШ-62",
           "scheduled": "09:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "late",
           "username": "@tash62vodnik",
-          "delay_minutes": 0
+          "delay_minutes": 48
         },
         {
           "pvz": "ТАШ-83",
           "scheduled": "09:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "late",
           "username": "@uzum_vodnik_tash83",
-          "delay_minutes": 0
+          "delay_minutes": 48
         },
         {
           "pvz": "ТАШ-115",
           "scheduled": "09:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "late",
           "username": "@Bektimir115",
-          "delay_minutes": 0
+          "delay_minutes": 48
         },
         {
           "pvz": "ТАШ-108",
@@ -1905,8 +1905,8 @@
         {
           "pvz": "ТАШ-84",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@hosiyatuzum",
           "delay_minutes": 0
         },
@@ -1929,16 +1929,16 @@
         {
           "pvz": "FrТАШ-163",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@Frtash163",
           "delay_minutes": 0
         },
         {
           "pvz": "FrТАШ-178",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@FrTash178",
           "delay_minutes": 0
         },
@@ -1953,16 +1953,16 @@
         {
           "pvz": "FrТАШ-193",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@frtash193",
           "delay_minutes": 0
         },
         {
           "pvz": "FrТАШ-192",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@FrTash192",
           "delay_minutes": 0
         },
@@ -2001,8 +2001,8 @@
         {
           "pvz": "FrТАШ-288",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@fruzumtash288",
           "delay_minutes": 0
         },
@@ -2049,8 +2049,8 @@
         {
           "pvz": "FrТАШ-357",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@Frtash357",
           "delay_minutes": 0
         },
@@ -2065,16 +2065,16 @@
         {
           "pvz": "FrТАШ-366",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@frtash366",
           "delay_minutes": 0
         },
         {
           "pvz": "FrТАШ-348",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:48",
+          "status": "early",
           "username": "@frtash348",
           "delay_minutes": 0
         },
