@@ -1828,7 +1828,7 @@
       ]
     },
     "2026-08-27": {
-      "generated_at": "27.08.2026 09:49",
+      "generated_at": "27.08.2026 09:52",
       "rows": [
         {
           "pvz": "ТАШ-28",
@@ -1977,8 +1977,8 @@
         {
           "pvz": "FrТАШ-211",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:50",
+          "status": "early",
           "username": "@FrTash211",
           "delay_minutes": 0
         },
@@ -2009,8 +2009,8 @@
         {
           "pvz": "FrТАШ-276",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:49",
+          "status": "early",
           "username": "@FrTash276",
           "delay_minutes": 0
         },
@@ -2025,8 +2025,8 @@
         {
           "pvz": "FrТАШ-340",
           "scheduled": "10:00",
-          "actual": null,
-          "status": "none",
+          "actual": "09:49",
+          "status": "early",
           "username": "@FrTash_340",
           "delay_minutes": 0
         },
